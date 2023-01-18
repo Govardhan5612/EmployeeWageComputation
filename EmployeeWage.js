@@ -5,6 +5,7 @@ const FULL_TIME_HOURS = 8;
 const WAGE_PER_HOUR = 20;
 let workingHours;
 function EmployeeWage() {
+    
     let ramdomValue = Math.floor(Math.random() * 10) % 3;
     switch (ramdomValue) {
         case IS_FULL_TIME:
@@ -16,5 +17,6 @@ function EmployeeWage() {
         default:
             workingHours = 0;
     }
-    console.log("Employee wage per day : "+workingHours*WAGE_PER_HOUR);
+    console.log("Employee Working hours : "+workingHours);
+    console.log("Employee wage per day : " + workingHours * WAGE_PER_HOUR);
 }
