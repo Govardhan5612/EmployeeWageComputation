@@ -12,8 +12,9 @@ function EmployeeWage() {
      * In this method calculate the Employee Wage
      */
     let workingHours = 0;
+    let workingHoursInMonth = 160;
     let day = 1;
-    while (day <= WORKING_DAYS_PER_MONTH) {
+    while (day <= WORKING_DAYS_PER_MONTH && workingHours <= workingHoursInMonth) {
         let ramdomValue = Math.floor(Math.random() * 10) % 3;
         switch (ramdomValue) {
             case IS_FULL_TIME:
