@@ -20,14 +20,14 @@ function EmployeeWage() {
         switch (ramdomValue) {
             case IS_FULL_TIME:
                 workingHours += FULL_TIME_HOURS;
-                employeeWageArray.push(FULL_TIME_HOURS*WAGE_PER_HOUR)
+                employeeWageArray.push(FULL_TIME_HOURS * WAGE_PER_HOUR)
                 break;
             case IS_PART_TIME:
                 workingHours += PART_TIME_HOURS;
-                employeeWageArray.push(PART_TIME_HOURS*WAGE_PER_HOUR)
+                employeeWageArray.push(PART_TIME_HOURS * WAGE_PER_HOUR)
                 break;
             default:
-                employeeWageArray.push(0*WAGE_PER_HOUR)
+                employeeWageArray.push(0 * WAGE_PER_HOUR)
                 workingHours += 0;
         }
         day++;
@@ -37,34 +37,36 @@ function EmployeeWage() {
     /**
      * print array
      */
-    console.log("Daily employee wage store in array : "+employeeWageArray);
+    console.log("Daily employee wage store in array : " + employeeWageArray);
     /**
      * use reduce function
      */
     console.log("Reduce function");
-    let toatalWage = employeeWageArray.reduce((x,y) => x+y);
+    let toatalWage = employeeWageArray.reduce((x, y) => x + y);
     console.log(toatalWage);
-    let number=1;
+    let number = 1;
     /**
      * use map function
      */
     console.log("map function");
-    employeeWageArray.map((x)=>{
-        console.log( number++ + ' : ' +x);
-    } );
+    employeeWageArray.map((x) => {
+        console.log(number++ + ' : ' + x);
+    });
     /**
      * use filter function
      */
     console.log("filter function");
-    employeeWageArray.filter(x => {if(x==160){
-        console.log(x);
-    }});
+    employeeWageArray.filter(x => {
+        if (x == 160) {
+            console.log(x);
+        }
+    });
     /**
      * use find function
      */
     console.log("find function 160 wage days");
-    employeeWageArray.find((x,y) =>{
-        if(x==160){
+    employeeWageArray.find((x, y) => {
+        if (x == 160) {
             console.log(y);
         }
     });
@@ -72,18 +74,28 @@ function EmployeeWage() {
      * every function
      */
     console.log("Every function for full time wage");
-    let status = employeeWageArray.every(x=> x==160);
+    let status = employeeWageArray.every(x => x == 160);
     console.log(status);
     console.log("Every function for part time wage");
-    let result = employeeWageArray.every(x=> x==80);
+    let result = employeeWageArray.every(x => x == 80);
     console.log(result);
     /**
      * find the total working days
      */
     console.log("filter function");
-    let count=0;
-    employeeWageArray.filter(x => {if(x>0){
-        count++;
-    }});
-    console.log("Working days : "+count);
+    let count = 0;
+    employeeWageArray.filter(x => {
+        if (x > 0) {
+            count++;
+        }
+    });
+    console.log("Working days : " + count);
+    /**
+     * Daily employee wage store in map 
+     */
+     let employeeMap = new Map();
+     for(let i =1;i<=20;i++){
+        employeeMap.set((i),employeeWageArray[i-1]);
+     }
+     console.log(employeeMap);
 }
