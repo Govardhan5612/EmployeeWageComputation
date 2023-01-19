@@ -11,6 +11,7 @@ function EmployeeWage() {
     /**
      * In this method calculate the Employee Wage
      */
+    let employeeWageArray = new Array();
     let workingHours = 0;
     let workingHoursInMonth = 160;
     let day = 1;
@@ -19,15 +20,19 @@ function EmployeeWage() {
         switch (ramdomValue) {
             case IS_FULL_TIME:
                 workingHours += FULL_TIME_HOURS;
+                employeeWageArray.push(FULL_TIME_HOURS*WAGE_PER_HOUR)
                 break;
             case IS_PART_TIME:
-                workingHours += PART_TIME_HOURS
+                workingHours += PART_TIME_HOURS;
+                employeeWageArray.push(PART_TIME_HOURS*WAGE_PER_HOUR)
                 break;
             default:
+                employeeWageArray.push(0*WAGE_PER_HOUR)
                 workingHours += 0;
         }
         day++;
     }
     console.log("Employee Working hours in month : " + workingHours);
     console.log("Employee Total wage per month : " + workingHours * WAGE_PER_HOUR);
+    console.log("Daily employee wage store in array : "+employeeWageArray);
 }
